@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // AboutRoles Container
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid';
-// AboutRoles Card
+// Card
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -15,6 +15,7 @@ import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Paper from '@material-ui/core/Paper';
 // AboutRoles Icons
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -40,12 +41,22 @@ const cardUseStyles = makeStyles((theme) => ({
   },
   listItemCenter: {
     textAlign: "center"
-  }
+  },
+  flexRow: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap"
+  },
+  flexRowItem: {
+    flex: "1 1 auto",
+    textAlign: "center",
+    margin: "5px"
+  },
 }));
 
 function RecipeReviewCard(props) {
   const classes = cardUseStyles();
-  const { title, icon, titleText, desc, useDesc, toolNamesList } = props
+  const { name, ingredients, tags, pictures, user } = props
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -54,31 +65,29 @@ function RecipeReviewCard(props) {
 
   return (
     <Card className={classes.root}>
-      <IconButton aria-label="settings">
-        {icon()}
-      </IconButton>
       <CardHeader
         titleTypographyProps={{variant:'h4' }}
-        title={titleText}
+        title={name}
       />
       <CardContent>
-        <Typography variant="subtitle1" component="p">
-          {desc}
-        </Typography>
+        <Paper className={classes.flexRow}>
+          {tags.map((val, idx) => {
+            return (
+              <Typography color="textSecondary" className={classes.flexRowItem}>
+                {val}
+              </Typography>
+            )
+          })}
+        </Paper>
         <br />
+        {
+          pictures()
+        }
         <Typography variant="h6" className={classes.headerColor}>
-          Things I enjoy building
-        </Typography>
-        <Typography variant="body">
-          {useDesc}
-        </Typography>
-        <br />
-        <br />
-        <Typography variant="h6" className={classes.headerColor}>
-          {title} Tools
+          Ingredients
         </Typography>
         <List dense={true} style={{paddingTop:0}}>
-          {toolNamesList.map((value, idx) => {
+          {ingredients.map((value, idx) => {
             return (
               <ListItem key={`${value} ${idx}`} className={classes.listItemCenter}>
                 <ListItemText
@@ -89,6 +98,9 @@ function RecipeReviewCard(props) {
             )
           })}
         </List>
+        <Typography variant="overline" display="block" style={{textAlign:"left"}}>
+          {user}
+        </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton
@@ -138,12 +150,11 @@ export default function AboutRoles(props) {
             {recipeData.map((obj, idx) => (
               <Grid key={`${obj.title} ${idx}`} item>
                 <RecipeReviewCard
-                  title={obj.title}
-                  icon={obj.icon}
-                  titleText={obj.titleText}
-                  desc={obj.desc}
-                  useDesc={obj.useDesc}
-                  toolNamesList={obj.toolNamesList}
+                  name={obj.name}
+                  ingredients={obj.ingredients}
+                  tags={obj.tags}
+                  pictures={obj.pictures}
+                  user={obj.user}
                   style={{background: "#fff"}}
                 />
               </Grid>

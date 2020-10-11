@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import RecipesPage from './pages/RecipesPage';
 import DashboardPage from './pages/DashboardPage';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 export default class App extends React.Component {
   constructor(props) {
