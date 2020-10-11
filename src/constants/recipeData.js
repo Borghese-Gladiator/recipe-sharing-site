@@ -25,7 +25,7 @@ export const recipeData = [
         </Carousel>
       )
     },
-    user: "Unique_Name"
+    user: "Chef John"
   },
   {
     name: "Mapo Tofu",
@@ -49,7 +49,7 @@ export const recipeData = [
         </Carousel>
       )
     },
-    user: "Unique_Name"
+    user: "Chef John"
   },
   {
     name: "Mapo Tofu",
@@ -73,7 +73,7 @@ export const recipeData = [
         </Carousel>
       )
     },
-    user: "Unique_Name"
+    user: "Chef John"
   },
   {
     name: "Mapo Tofu",
@@ -97,6 +97,6 @@ export const recipeData = [
         </Carousel>
       )
     },
-    user: "Unique_Name"
+    user: "Chef John"
   },
 ]

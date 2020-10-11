@@ -23,8 +23,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const cardUseStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
-    textAlign: "center"
+    maxWidth: 345
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -65,12 +64,17 @@ function RecipeReviewCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-        titleTypographyProps={{variant:'h4' }}
-        title={name}
-      />
       <CardContent>
-        <Paper className={classes.flexRow}>
+        {
+          pictures()
+        }
+        <Typography variant="h4">
+          {name}
+        </Typography>
+        <Typography variant="overline" display="block" style={{textAlign:"left"}}>
+          By <strong><u>{user}</u></strong>
+        </Typography>
+        <div className={classes.flexRow}>
           {tags.map((val, idx) => {
             return (
               <Typography color="textSecondary" className={classes.flexRowItem}>
@@ -78,29 +82,7 @@ function RecipeReviewCard(props) {
               </Typography>
             )
           })}
-        </Paper>
-        <br />
-        {
-          pictures()
-        }
-        <Typography variant="h6" className={classes.headerColor}>
-          Ingredients
-        </Typography>
-        <List dense={true} style={{paddingTop:0}}>
-          {ingredients.map((value, idx) => {
-            return (
-              <ListItem key={`${value} ${idx}`} className={classes.listItemCenter}>
-                <ListItemText
-                  disableTypography
-                  primary={<Typography variant="subtitle1">{value}</Typography>}
-                />
-              </ListItem>
-            )
-          })}
-        </List>
-        <Typography variant="overline" display="block" style={{textAlign:"left"}}>
-          {user}
-        </Typography>
+        </div>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton
@@ -116,6 +98,21 @@ function RecipeReviewCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
+          <Typography variant="h6">
+            Ingredients
+          </Typography>
+          <List dense={true} style={{paddingTop:0}}>
+            {ingredients.map((value, idx) => {
+              return (
+                <ListItem key={`${value} ${idx}`}>
+                  <ListItemText
+                    disableTypography
+                    primary={<Typography variant="subtitle1">{value}</Typography>}
+                  />
+                </ListItem>
+              )
+            })}
+          </List>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />
           </IconButton>
