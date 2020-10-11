@@ -16,6 +16,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
+import Divider from '@material-ui/core/Divider'
 // AboutRoles Icons
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -51,6 +52,10 @@ const cardUseStyles = makeStyles((theme) => ({
     textAlign: "center",
     margin: "5px"
   },
+  divider: {
+    height: 28,
+    margin: 4,
+  },
 }));
 
 function RecipeReviewCard(props) {
@@ -61,6 +66,22 @@ function RecipeReviewCard(props) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  // Generate list items with dividers
+  const listItems = tags.map((val, idx) => {
+    return (
+      <Typography color="textSecondary" className={classes.flexRowItem}>
+        {val}
+      </Typography>
+    )
+  })
+  const listItemsWithDividers = [];
+  listItems.forEach((item, index) => {
+    listItemsWithDividers.push(item)
+    if (listItems[index + 1] !== undefined) {
+      listItemsWithDividers.push(<Divider className={classes.divider} orientation="vertical" />)
+    }
+  })
 
   return (
     <Card className={classes.root}>
@@ -75,13 +96,7 @@ function RecipeReviewCard(props) {
           By <strong><u>{user}</u></strong>
         </Typography>
         <div className={classes.flexRow}>
-          {tags.map((val, idx) => {
-            return (
-              <Typography color="textSecondary" className={classes.flexRowItem}>
-                {val}
-              </Typography>
-            )
-          })}
+          {listItemsWithDividers}
         </div>
       </CardContent>
       <CardActions disableSpacing>
