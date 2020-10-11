@@ -39,7 +39,7 @@ export default class App extends React.Component {
     console.log(process.env.PUBLIC_URL)
     return (
       <HashRouter initialEntries={['/drafts']} initialIndex={0}>
-        <div>
+        <div style={{backgroundColor: "#DAE3E7"}}>
           <NavigationMenu
             onSelectLanguage={this.onSelectLanguage}
             setDarkMode={this.setDarkMode}
