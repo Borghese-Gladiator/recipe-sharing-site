@@ -15,8 +15,8 @@ import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Paper from '@material-ui/core/Paper';
-import Divider from '@material-ui/core/Divider'
+import Checkbox from '@material-ui/core/Checkbox';
+import Divider from '@material-ui/core/Divider';
 // AboutRoles Icons
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -49,7 +49,6 @@ const cardUseStyles = makeStyles((theme) => ({
   },
   flexRowItem: {
     flex: "1 1 auto",
-    textAlign: "center",
     margin: "5px"
   },
   divider: {
@@ -92,12 +91,14 @@ function RecipeReviewCard(props) {
         <Typography variant="h4">
           {name}
         </Typography>
-        <Typography variant="overline" display="block" style={{textAlign:"left"}}>
-          By <strong><u>{user}</u></strong>
-        </Typography>
+        <br />
         <div className={classes.flexRow}>
           {listItemsWithDividers}
         </div>
+        <br />
+        <Typography variant="caption" display="block" style={{textAlign:"left"}}>
+          By <strong><u>{user}</u></strong>
+        </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton
@@ -116,10 +117,11 @@ function RecipeReviewCard(props) {
           <Typography variant="h6">
             Ingredients
           </Typography>
-          <List dense={true} style={{paddingTop:0}}>
+          <List dense={true}>
             {ingredients.map((value, idx) => {
               return (
                 <ListItem key={`${value} ${idx}`}>
+                  <Checkbox inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
                   <ListItemText
                     disableTypography
                     primary={<Typography variant="subtitle1">{value}</Typography>}
@@ -128,12 +130,14 @@ function RecipeReviewCard(props) {
               )
             })}
           </List>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
+          <div style={{textAlign:"center"}}>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+          </div>
         </CardContent>
       </Collapse>
     </Card>

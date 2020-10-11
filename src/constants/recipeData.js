@@ -5,8 +5,8 @@ import { Carousel } from 'react-responsive-carousel';
 export const recipeData = [
   {
     name: "Mapo Tofu",
-    ingredients: ["Tofu"],
-    tags: ["Asian", "Chinese"],
+    ingredients: ["Tofu", "豆瓣酱", "Ground meat", "Salt"],
+    tags: ["Chinese", "Spicy"],
     pictures: () => {
       return (
         <Carousel>
@@ -29,8 +29,8 @@ export const recipeData = [
   },
   {
     name: "Mapo Tofu",
-    ingredients: ["Tofu"],
-    tags: ["Asian", "Chinese"],
+    ingredients: ["Tofu", "豆瓣酱", "Ground meat", "Salt"],
+    tags: ["Chinese", "Spicy"],
     pictures: () => {
       return (
         <Carousel>
@@ -53,8 +53,8 @@ export const recipeData = [
   },
   {
     name: "Mapo Tofu",
-    ingredients: ["Tofu"],
-    tags: ["Asian", "Chinese"],
+    ingredients: ["Tofu", "豆瓣酱", "Ground meat", "Salt"],
+    tags: ["Chinese", "Spicy"],
     pictures: () => {
       return (
         <Carousel>
@@ -77,8 +77,8 @@ export const recipeData = [
   },
   {
     name: "Mapo Tofu",
-    ingredients: ["Tofu"],
-    tags: ["Asian", "Chinese"],
+    ingredients: ["Tofu", "豆瓣酱", "Ground meat", "Salt"],
+    tags: ["Chinese", "Spicy"],
     pictures: () => {
       return (
         <Carousel>
