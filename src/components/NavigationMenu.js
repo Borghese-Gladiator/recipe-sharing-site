@@ -178,12 +178,11 @@ export default function PersistentDrawerLeft(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const toggleDrawer = (open) => (event) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setOpen(open)
   };
 
   const [darkMode, setDarkMode] = React.useState(false);
@@ -212,7 +211,7 @@ export default function PersistentDrawerLeft(props) {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            onClick={toggleDrawer(true)}
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
@@ -245,23 +244,28 @@ export default function PersistentDrawerLeft(props) {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
+        <div
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <div className={classes.drawerHeader}>
+            <IconButton onClick={toggleDrawer(false)}>
+              {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            </IconButton>
+          </div>
+          <Divider />
+          <List>
+            {[
+              { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
+              { text: 'ABOUT', link: '/about', iconFunc: () => { return <InfoIcon /> } },
+              { text: 'RECIPES', link: '/recipes', iconFunc: () => { return <InfoIcon /> } },
+              { text: 'DASHBOARD', link: '/dashboard', iconFunc: () => { return <InfoIcon /> } },
+            ].map((obj, idx) => {
+              return <ListItemLink key={obj.text + idx} to={obj.link} primary={obj.text} icon={obj.iconFunc()} />
+            })}
+          </List>
         </div>
-        <Divider />
-        <List>
-          {[
-            { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
-            { text: 'ABOUT', link: '/about', iconFunc: () => { return <InfoIcon /> } },
-            { text: 'RECIPES', link: '/recipes', iconFunc: () => { return <InfoIcon /> } },
-            { text: 'DASHBOARD', link: '/dashboard', iconFunc: () => { return <InfoIcon /> } },
-          ].map((obj, idx) => {
-            return <ListItemLink key={obj.text + idx} to={obj.link} primary={obj.text} icon={obj.iconFunc()} />
-          })}
-        </List>
-        <Divider />
       </Drawer>
     </div>
   );
