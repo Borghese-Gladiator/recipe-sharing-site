@@ -219,7 +219,7 @@ export default function PersistentDrawerLeft(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Audio Overlay
+            Ethnic Recipes
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
