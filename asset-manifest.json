@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/recipe-sharing-site/static/css/main.69eda509.chunk.css",
+    "main.js": "/recipe-sharing-site/static/js/main.6b50a326.chunk.js",
+    "main.js.map": "/recipe-sharing-site/static/js/main.6b50a326.chunk.js.map",
+    "runtime-main.js": "/recipe-sharing-site/static/js/runtime-main.8760cb3f.js",
+    "runtime-main.js.map": "/recipe-sharing-site/static/js/runtime-main.8760cb3f.js.map",
+    "static/js/2.412be0d8.chunk.js": "/recipe-sharing-site/static/js/2.412be0d8.chunk.js",
+    "static/js/2.412be0d8.chunk.js.map": "/recipe-sharing-site/static/js/2.412be0d8.chunk.js.map",
+    "index.html": "/recipe-sharing-site/index.html",
+    "precache-manifest.52b317a7d306024d8bafb090d4d63d1a.js": "/recipe-sharing-site/precache-manifest.52b317a7d306024d8bafb090d4d63d1a.js",
+    "service-worker.js": "/recipe-sharing-site/service-worker.js",
+    "static/css/main.69eda509.chunk.css.map": "/recipe-sharing-site/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.412be0d8.chunk.js.LICENSE.txt": "/recipe-sharing-site/static/js/2.412be0d8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8760cb3f.js",
+    "static/js/2.412be0d8.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.6b50a326.chunk.js"
+  ]
+}
