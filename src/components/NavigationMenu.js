@@ -239,7 +239,6 @@ export default function PersistentDrawerLeft(props) {
       
       <Drawer
         className={classes.drawer}
-        variant="persistent"
         anchor="left"
         open={open}
         classes={{
