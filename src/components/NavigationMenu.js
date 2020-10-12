@@ -24,11 +24,9 @@ import Select from '@material-ui/core/Select';
 
 import Brightness6Icon from '@material-ui/icons/Brightness6';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
-import GitHubIcon from '@material-ui/icons/GitHub';
 import TranslateIcon from '@material-ui/icons/Translate';
 import HomeIcon from '@material-ui/icons/Home'
 import InfoIcon from '@material-ui/icons/Info';
-import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 
 /*
   Navigation Menu holds
