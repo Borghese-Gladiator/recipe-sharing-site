@@ -45,16 +45,16 @@ export default class App extends React.Component {
             setDarkMode={this.setDarkMode}
           />
           <Route exact path="/">
-            <HomePage />
+            <HomePage lang={lang} />
           </Route>
           <Route path="/about">
-            <AboutPage />
+            <AboutPage lang={lang} />
           </Route>
           <Route path="/recipes">
-            <RecipesPage />
+            <RecipesPage lang={lang} />
           </Route>
           <Route path="/dashboard">
-            <DashboardPage />
+            <DashboardPage lang={lang} />
           </Route>
         </div>
       </HashRouter>
