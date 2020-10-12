@@ -11,15 +11,15 @@ export const recipeData = [
       return (
         <Carousel>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Mapo Tofu</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 2</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 3</p>
           </div>
         </Carousel>
@@ -35,15 +35,15 @@ export const recipeData = [
       return (
         <Carousel>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Mapo Tofu</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 2</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 3</p>
           </div>
         </Carousel>
@@ -59,15 +59,15 @@ export const recipeData = [
       return (
         <Carousel>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Mapo Tofu</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 2</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 3</p>
           </div>
         </Carousel>
@@ -83,15 +83,15 @@ export const recipeData = [
       return (
         <Carousel>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Mapo Tofu</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 2</p>
           </div>
           <div>
-            <img src={mapoTofuImg} />
+            <img src={mapoTofuImg} alt="Mapo Tofu" />
             <p className="legend">Legend 3</p>
           </div>
         </Carousel>
