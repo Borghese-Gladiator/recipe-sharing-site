@@ -206,6 +206,7 @@ export default function PersistentDrawerLeft(props) {
         })}
         style={{
           opacity: 0.7,
+          backgroundColor: '#222831',
           backgroundBlendMode: "normal,luminosity",
           backdropFilter: 'blur(5px)',
           boxShadow: '3px 6px 20px rgba(104,102,255,.44), -3px -6px 10px hsla(0,0%,100%,.6)'
