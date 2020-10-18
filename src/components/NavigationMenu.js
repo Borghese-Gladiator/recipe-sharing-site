@@ -27,6 +27,8 @@ import Brightness3Icon from '@material-ui/icons/Brightness3';
 import TranslateIcon from '@material-ui/icons/Translate';
 import HomeIcon from '@material-ui/icons/Home'
 import InfoIcon from '@material-ui/icons/Info';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import DashboardIcon from '@material-ui/icons/Dashboard';
 
 /*
   Navigation Menu holds
@@ -117,6 +119,9 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
+  logo: {
+    height: '50px',
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -173,6 +178,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
+  const {logo} = props;
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -215,9 +221,7 @@ export default function PersistentDrawerLeft(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Ethnic Recipes
-          </Typography>
+          <img src={logo} className={classes.logo} alt="logo" />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton 
@@ -257,8 +261,8 @@ export default function PersistentDrawerLeft(props) {
             {[
               { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
               { text: 'ABOUT', link: '/about', iconFunc: () => { return <InfoIcon /> } },
-              { text: 'RECIPES', link: '/recipes', iconFunc: () => { return <InfoIcon /> } },
-              { text: 'DASHBOARD', link: '/dashboard', iconFunc: () => { return <InfoIcon /> } },
+              { text: 'RECIPES', link: '/recipes', iconFunc: () => { return <FastfoodIcon /> } },
+              { text: 'DASHBOARD', link: '/dashboard', iconFunc: () => { return <DashboardIcon /> } },
             ].map((obj, idx) => {
               return <ListItemLink key={obj.text + idx} to={obj.link} primary={obj.text} icon={obj.iconFunc()} />
             })}

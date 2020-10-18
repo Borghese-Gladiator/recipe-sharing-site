@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import RecipesPage from './pages/RecipesPage';
 import DashboardPage from './pages/DashboardPage';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import logo from './img/TastePerfect Logo.png'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,6 +42,7 @@ export default class App extends React.Component {
       <HashRouter initialEntries={['/drafts']} initialIndex={0}>
         <div style={{backgroundColor: "#DAE3E7"}}>
           <NavigationMenu
+            logo={logo}
             onSelectLanguage={this.onSelectLanguage}
             setDarkMode={this.setDarkMode}
           />
