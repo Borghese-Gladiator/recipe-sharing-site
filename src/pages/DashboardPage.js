@@ -5,6 +5,11 @@ import {
 } from "react-router-dom";
 import SidebarDashboard from '../components/SidebarDashboard';
 
+import HomeIcon from '@material-ui/icons/Home'
+import InfoIcon from '@material-ui/icons/Info';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+
 function HomeDashboard() {
   return (
     <h2>HOME</h2>
@@ -31,24 +36,21 @@ function SocialDashboard() {
   )
 }
 
-const routeData = [
-  { id: 'home', name: 'Home' },
-  { id: 'profile', name: 'profile' },
-  { id: 'history', name: 'history' },
-  { id: 'social', name: 'social' }
-]
+
 
 export default function DashboardPage({ match: { url } }) {
+  const routeData = [
+    { text: 'HOME', link: `${url}/home`, iconFunc: () => { return <HomeIcon /> } },
+    { text: 'PROFILE', link: `${url}/profile`, iconFunc: () => { return <InfoIcon /> } },
+    { text: 'HISTORY', link: `${url}/history`, iconFunc: () => { return <FastfoodIcon /> } },
+    { text: 'SOCIAL', link: `${url}/`, iconFunc: () => { return <DashboardIcon /> } },
+  ]
+  
   return (
     <div style={{backgroundColor: "#DAE3E7"}}>
-      <SidebarDashboard />
-      <ul>
-        {routeData.map(({ name, id }) => (
-          <li key={id}>
-            <Link to={`${url}/${id}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
+      <SidebarDashboard
+        routeData={routeData}
+      />
       <Route path={`${url}/home`} component={HomeDashboard} />
       <Route path={`${url}/profile`} component={ProfileDashboard} />
       <Route path={`${url}/history`} component={HistoryDashboard } />
