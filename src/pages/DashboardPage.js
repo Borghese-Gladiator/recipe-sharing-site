@@ -41,6 +41,7 @@ const routeData = [
 export default function DashboardPage({ match: { url } }) {
   return (
     <div style={{backgroundColor: "#DAE3E7"}}>
+      <SidebarDashboard />
       <ul>
         {routeData.map(({ name, id }) => (
           <li key={id}>
