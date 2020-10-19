@@ -25,10 +25,6 @@ import Select from '@material-ui/core/Select';
 import Brightness6Icon from '@material-ui/icons/Brightness6';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import TranslateIcon from '@material-ui/icons/Translate';
-import HomeIcon from '@material-ui/icons/Home'
-import InfoIcon from '@material-ui/icons/Info';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import DashboardIcon from '@material-ui/icons/Dashboard';
 
 /*
   Navigation Menu holds
@@ -178,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
-  const {logo} = props;
+  const { logo, routeData } = props;
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -259,12 +255,7 @@ export default function PersistentDrawerLeft(props) {
           </div>
           <Divider />
           <List>
-            {[
-              { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
-              { text: 'ABOUT', link: '/about', iconFunc: () => { return <InfoIcon /> } },
-              { text: 'RECIPES', link: '/recipes', iconFunc: () => { return <FastfoodIcon /> } },
-              { text: 'DASHBOARD', link: '/dashboard', iconFunc: () => { return <DashboardIcon /> } },
-            ].map((obj, idx) => {
+            {routeData.map((obj, idx) => {
               return <ListItemLink key={obj.text + idx} to={obj.link} primary={obj.text} icon={obj.iconFunc()} />
             })}
           </List>
