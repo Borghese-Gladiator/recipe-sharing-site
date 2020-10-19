@@ -69,7 +69,7 @@ function RecipeReviewCard(props) {
   // Generate list items with dividers
   const listItems = tags.map((val, idx) => {
     return (
-      <Typography color="textSecondary" className={classes.flexRowItem}>
+      <Typography key={`${val} ${idx}`} color="textSecondary" className={classes.flexRowItem}>
         {val}
       </Typography>
     )
