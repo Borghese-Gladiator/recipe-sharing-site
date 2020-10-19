@@ -16,7 +16,6 @@ import DashboardPage from './pages/DashboardPage';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import logo from './img/TastePerfect Logo.png'
 
-
 import HomeIcon from '@material-ui/icons/Home'
 import InfoIcon from '@material-ui/icons/Info';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
