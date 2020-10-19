@@ -1,4 +1,6 @@
 import React from 'react';
+import ListItemLink from './ListItemLink';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -38,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SidebarDashboard() {
+export default function SidebarDashboard(props) {
+  const { routeData } = props;
   const classes = useStyles();
 
   return (
@@ -52,21 +55,9 @@ export default function SidebarDashboard() {
         <Toolbar />
         <div className={classes.drawerContainer}>
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
+            {routeData.map((obj, idx) => {
+              return <ListItemLink key={obj.text + idx} to={obj.link} primary={obj.text} icon={obj.iconFunc()} />
+            })}
           </List>
         </div>
       </Drawer>
