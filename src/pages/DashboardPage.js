@@ -5,38 +5,16 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
+import HomeDashboard from '../components/Dashboard/HomeDashboard'
+import ProfileDashboard from '../components/Dashboard/ProfileDashboard'
+import HistoryDashboard from '../components/Dashboard/HistoryDashboard'
+import SocialDashboard from '../components/Dashboard/SocialDashboard'
 // Sidebar icons
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
 import HistoryIcon from '@material-ui/icons/History';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
-function HomeDashboard() {
-  return (
-    <h2>HOME</h2>
-  )
-}
-
-function HistoryDashboard() {
-  return (
-    <h2>History</h2>
-  )
-}
-
-function ProfileDashboard() {
-  return (
-    <h2>PROFILE</h2>
-  )
-}
-
-function SocialDashboard() {
-  return (
-    <div>
-      <h3>SOCIAL</h3>
-    </div>
-  )
-}
 // declared here && SidebarDashboard - unable to pass since SidebarDashboard drawerWidth is inside useStyles()
 const drawerWidth = 240;
 
