@@ -1,10 +1,7 @@
 import React from "react";
 import SidebarDashboard from '../components/SidebarDashboard';
 
-import {
-  Route,
-  Link
-} from "react-router-dom";
+import { Route } from "react-router-dom";
 import HomeDashboard from '../components/Dashboard/HomeDashboard'
 import ProfileDashboard from '../components/Dashboard/ProfileDashboard'
 import HistoryDashboard from '../components/Dashboard/HistoryDashboard'

@@ -1,8 +1,7 @@
 import React from "react";
 import {
   HashRouter,
-  Route,
-  BrowserRouter
+  Route
 } from "react-router-dom";
 // Custom menu: nav and sidebar
 import NavigationMenu from "./components/NavigationMenu"

@@ -6,7 +6,6 @@ import Grid from '@material-ui/core/Grid';
 // Card
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
@@ -154,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AboutRoles(props) {
+export default function RecipeCardList(props) {
   const classes = useStyles();
   const { id, recipeData } = props
 
