@@ -1,7 +1,11 @@
 import React from 'react'
+import Landing from '../components/Landing'
 
 export default function AboutPage(props) {
   return (
-    <h2>HOME</h2>
+    <div>
+      <h2>HOME</h2>
+      <Landing />
+    </div>
   )
 }
