@@ -195,7 +195,7 @@ export default function PersistentDrawerLeft(props) {
               color="inherit"
             >
               <Typography variant="button" display="block" gutterBottom>
-                Sign In: 
+                Sign In
               </Typography>
               <ExitToAppIcon />
             </IconButton>
@@ -205,7 +205,7 @@ export default function PersistentDrawerLeft(props) {
               color="inherit"
             >
               <Typography variant="button" display="block" gutterBottom>
-                Register: 
+                Register
               </Typography>
               <AssignmentIcon />
             </IconButton>
