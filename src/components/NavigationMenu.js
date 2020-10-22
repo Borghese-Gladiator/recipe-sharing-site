@@ -8,6 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -18,6 +19,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import TranslateIcon from '@material-ui/icons/Translate';
 
 /*
@@ -93,6 +95,10 @@ const useStyles = makeStyles((theme) => ({
   },
   hide: {
     display: 'none',
+  },
+  divider: {
+    margin: theme.spacing(0, 0.5),
+    background: "white",
   },
   drawer: {
     width: drawerWidth,
@@ -188,14 +194,22 @@ export default function PersistentDrawerLeft(props) {
               aria-label="sign in"
               color="inherit"
             >
+              <Typography variant="button" display="block" gutterBottom>
+                Sign In: 
+              </Typography>
               <ExitToAppIcon />
             </IconButton>
+            
             <IconButton 
               aria-label="sign in"
               color="inherit"
             >
-              <ExitToAppIcon />
+              <Typography variant="button" display="block" gutterBottom>
+                Register: 
+              </Typography>
+              <AssignmentIcon />
             </IconButton>
+            <Divider className={classes.divider} orientation="vertical" flexItem />
             <LanguageSelector onSelectLanguage={props.onSelectLanguage} />
           </div>
         </Toolbar>
