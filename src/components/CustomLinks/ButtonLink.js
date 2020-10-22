@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 // Material UI components
 import { Button, Typography } from '@material-ui/core';
 
-export default function IconLabelLink(props) {
-  const { ariaLabel, icon, primary, to } = props;
+export default function ButtonLink(props) {
+  const { ariaLabel, primary, to } = props;
 
   const renderLink = React.useMemo(
     () => React.forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />),
@@ -23,14 +23,12 @@ export default function IconLabelLink(props) {
       <Typography variant="button" display="block" gutterBottom>
         {primary}
       </Typography>
-      {icon ? <>{icon}</> : null}
     </Button>
   );
 }
 
-IconLabelLink.propTypes = {
+ButtonLink.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
-  icon: PropTypes.element,
   primary: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
 };

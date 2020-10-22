@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItemLink from './ListItemLink';
+import { ListItemLink, ButtonAndIconLink } from './CustomLinks';
 
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -21,7 +21,7 @@ import Select from '@material-ui/core/Select';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import TranslateIcon from '@material-ui/icons/Translate';
-import IconLabelLink from './IconLabelLink';
+import IconLabelLink from './CustomLinks/ButtonAndIconLink';
 
 /*
   Navigation Menu holds
@@ -191,13 +191,13 @@ export default function PersistentDrawerLeft(props) {
           <img src={logo} className={classes.logo} alt="logo" />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconLabelLink 
+            <ButtonAndIconLink 
               ariaLabel="sign-in"
               to="/signin"
               primary="Sign In"
               icon={<ExitToAppIcon />} 
             />
-            <IconLabelLink 
+            <ButtonAndIconLink 
               ariaLabel="register"
               to="/register"
               primary="Register"
