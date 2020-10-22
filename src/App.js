@@ -7,26 +7,32 @@ import {
 import NavigationMenu from "./components/NavigationMenu"
 // Pages
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import RecipesPage from './pages/RecipesPage';
-import DashboardPage from './pages/DashboardPage';
+import BrowsePage from './pages/BrowsePage';
+import HomeDashboard from './components/Dashboard/HomeDashboard'
+import ProfileDashboard from './components/Dashboard/ProfileDashboard'
+import HistoryDashboard from './components/Dashboard/HistoryDashboard'
+import SocialDashboard from './components/Dashboard/SocialDashboard'
+
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import logo from './img/TastePerfect Logo.png'
 // Sidebar icons
 import HomeIcon from '@material-ui/icons/Home'
-import InfoIcon from '@material-ui/icons/Info';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
+import PageviewIcon from '@material-ui/icons/Pageview';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import HistoryIcon from '@material-ui/icons/History';
+import PeopleIcon from '@material-ui/icons/People';
 
 const routeData = [
   { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
-  { text: 'ABOUT', link: '/about', iconFunc: () => { return <InfoIcon /> } },
-  { text: 'RECIPES', link: '/recipes', iconFunc: () => { return <FastfoodIcon /> } },
-  { text: 'DASHBOARD', link: '/dashboard', iconFunc: () => { return <DashboardIcon /> } },
+  { text: 'BROWSE', link: "/browse", iconFunc: () => { return <PageviewIcon /> } },
+  { text: 'DASHBOARD', link: "/dashboard", iconFunc: () => { return <DashboardIcon /> } },
+  { text: 'PROFILE', link: "/profile", iconFunc: () => { return <AccountBoxIcon /> } },
+  { text: 'HISTORY', link: "/history", iconFunc: () => { return <HistoryIcon /> } },
+  { text: 'SOCIAL', link: "/social", iconFunc: () => { return <PeopleIcon /> } },
 ]
 
 export default function App(props) {
-  const [darkMode, setDarkMode] = React.useState(false);
   const [lang, setLang] = React.useState('en');
 
   return (
@@ -36,12 +42,13 @@ export default function App(props) {
           routeData={routeData}
           logo={logo}
           onSelectLanguage={setLang}
-          setDarkMode={setDarkMode}
         />
         <Route exact path="/" component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/recipes" component={RecipesPage} />
-        <Route path="/dashboard" component={DashboardPage} />
+        <Route path="/browse" component={BrowsePage} />
+        <Route path="/dashboard" component={HomeDashboard} />
+        <Route path="/profile" component={ProfileDashboard} />
+        <Route path="/history" component={HistoryDashboard } />
+        <Route path="/social" component={SocialDashboard} />
       </div>
     </HashRouter>
   );

@@ -17,8 +17,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-import Brightness6Icon from '@material-ui/icons/Brightness6';
-import Brightness3Icon from '@material-ui/icons/Brightness3';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import TranslateIcon from '@material-ui/icons/Translate';
 
 /*
@@ -156,13 +155,6 @@ export default function PersistentDrawerLeft(props) {
     setOpen(open)
   };
 
-  const [darkMode, setDarkMode] = React.useState(false);
-
-  const handleDarkMode = (event) => {
-    setDarkMode(!darkMode)
-    props.setDarkMode(!darkMode)
-  }
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -193,11 +185,16 @@ export default function PersistentDrawerLeft(props) {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton 
-              aria-label="dark mode on off"
+              aria-label="sign in"
               color="inherit"
-              onClick={handleDarkMode}
             >
-              { darkMode ? <Brightness3Icon /> : <Brightness6Icon /> }
+              <ExitToAppIcon />
+            </IconButton>
+            <IconButton 
+              aria-label="sign in"
+              color="inherit"
+            >
+              <ExitToAppIcon />
             </IconButton>
             <LanguageSelector onSelectLanguage={props.onSelectLanguage} />
           </div>
