@@ -8,6 +8,8 @@ import NavigationMenu from "./components/NavigationMenu"
 // Pages
 import HomePage from './pages/HomePage';
 import BrowsePage from './pages/BrowsePage';
+import SigninPage from './pages/SigninPage';
+import RegisterPage from './pages/RegisterPage';
 import HomeDashboard from './components/Dashboard/HomeDashboard'
 import ProfileDashboard from './components/Dashboard/ProfileDashboard'
 import HistoryDashboard from './components/Dashboard/HistoryDashboard'
@@ -23,7 +25,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import HistoryIcon from '@material-ui/icons/History';
 import PeopleIcon from '@material-ui/icons/People';
 
-const routeData = [
+const navMenuRouteData = [
   { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
   { text: 'BROWSE', link: "/browse", iconFunc: () => { return <PageviewIcon /> } },
   { text: 'DASHBOARD', link: "/dashboard", iconFunc: () => { return <DashboardIcon /> } },
@@ -39,7 +41,7 @@ export default function App(props) {
     <HashRouter initialEntries={['/drafts']} initialIndex={0}>
       <div style={{backgroundColor: "#DAE3E7"}}>
         <NavigationMenu
-          routeData={routeData}
+          routeData={navMenuRouteData}
           logo={logo}
           onSelectLanguage={setLang}
         />
@@ -49,6 +51,8 @@ export default function App(props) {
         <Route path="/profile" component={ProfileDashboard} />
         <Route path="/history" component={HistoryDashboard } />
         <Route path="/social" component={SocialDashboard} />
+        <Route path="/signin" component={SigninPage} />
+        <Route path="/register" component={RegisterPage} />
       </div>
     </HashRouter>
   );

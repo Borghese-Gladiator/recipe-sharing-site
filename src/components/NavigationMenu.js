@@ -21,6 +21,7 @@ import Select from '@material-ui/core/Select';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import TranslateIcon from '@material-ui/icons/Translate';
+import IconLabelLink from './IconLabelLink';
 
 /*
   Navigation Menu holds
@@ -190,25 +191,18 @@ export default function PersistentDrawerLeft(props) {
           <img src={logo} className={classes.logo} alt="logo" />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton 
-              aria-label="sign in"
-              color="inherit"
-            >
-              <Typography variant="button" display="block" gutterBottom>
-                Sign In
-              </Typography>
-              <ExitToAppIcon />
-            </IconButton>
-            
-            <IconButton 
-              aria-label="sign in"
-              color="inherit"
-            >
-              <Typography variant="button" display="block" gutterBottom>
-                Register
-              </Typography>
-              <AssignmentIcon />
-            </IconButton>
+            <IconLabelLink 
+              ariaLabel="sign-in"
+              to="/signin"
+              primary="Sign In"
+              icon={<ExitToAppIcon />} 
+            />
+            <IconLabelLink 
+              ariaLabel="register"
+              to="/register"
+              primary="Register"
+              icon={<AssignmentIcon />} 
+            />
             <Divider className={classes.divider} orientation="vertical" flexItem />
             <LanguageSelector onSelectLanguage={props.onSelectLanguage} />
           </div>
