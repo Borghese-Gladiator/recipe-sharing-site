@@ -1,7 +1,9 @@
 import React from 'react'
-
+// ReactRouter Link
 import { Link as RouterLink } from 'react-router-dom';
+// Prop Type checking
 import PropTypes from 'prop-types';
+// Material UI components
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText'
