@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import BrowsePage from './pages/BrowsePage';
 import SigninPage from './pages/SigninPage';
 import RegisterPage from './pages/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HomeDashboard from './components/Dashboard/HomeDashboard'
 import ProfileDashboard from './components/Dashboard/ProfileDashboard'
 import HistoryDashboard from './components/Dashboard/HistoryDashboard'
@@ -53,6 +54,7 @@ export default function App(props) {
         <Route path="/social" component={SocialDashboard} />
         <Route path="/signin" component={SigninPage} />
         <Route path="/register" component={RegisterPage} />
+        <Route path="/forgotpassword" component={ForgotPasswordPage} />
       </div>
     </HashRouter>
   );
