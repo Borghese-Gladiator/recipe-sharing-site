@@ -45,16 +45,17 @@ export default function App(props) {
           routeData={navMenuRouteData}
           logo={logo}
           onSelectLanguage={setLang}
-        />
-        <Route exact path="/" component={HomePage} />
-        <Route path="/browse" component={BrowsePage} />
-        <Route path="/dashboard" component={HomeDashboard} />
-        <Route path="/profile" component={ProfileDashboard} />
-        <Route path="/history" component={HistoryDashboard } />
-        <Route path="/social" component={SocialDashboard} />
-        <Route path="/signin" component={SigninPage} />
-        <Route path="/register" component={RegisterPage} />
-        <Route path="/forgotpassword" component={ForgotPasswordPage} />
+        >
+          <Route exact path="/" component={HomePage} />
+          <Route path="/browse" component={BrowsePage} />
+          <Route path="/dashboard" component={HomeDashboard} />
+          <Route path="/profile" component={ProfileDashboard} />
+          <Route path="/history" component={HistoryDashboard } />
+          <Route path="/social" component={SocialDashboard} />
+          <Route path="/signin" component={SigninPage} />
+          <Route path="/register" component={RegisterPage} />
+          <Route path="/forgotpassword" component={ForgotPasswordPage} />
+        </NavigationMenu>
       </div>
     </HashRouter>
   );
