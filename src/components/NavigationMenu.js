@@ -73,6 +73,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
+  logo: {
+    height: '50px',
+  },
+
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['margin', 'width'], {
@@ -88,9 +92,6 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
-  logo: {
-    height: '50px',
-  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -101,6 +102,17 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(0, 0.5),
     background: "white",
   },
+  grow: {
+    flexGrow: 1,
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  toolbar: theme.mixins.toolbar,
+  
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -125,27 +137,6 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: -drawerWidth,
   },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-
-  grow: {
-    flexGrow: 1,
-  },
-  title: {
-    flexGrow: 1,
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  toolbar: theme.mixins.toolbar
 }));
     
 
