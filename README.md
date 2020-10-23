@@ -1,4 +1,4 @@
-![TastePerfect logo](src/img/TastePerfect-Logo.png.png)
+![TastePerfect logo](src/img/TastePerfect-Logo.png)
 
 <h4 align="center">A localized, personalized community recipe site appealing to Chinese & Spanish speakers.</h4>
 <p align="center">
