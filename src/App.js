@@ -57,13 +57,13 @@ function App(props) {
         >
           <Route exact path="/" render={(props) => <HomePage {...props} t={t} /> } />
           <Route path="/browse" render={(props) => <BrowsePage {...props} t={t} /> } />
-          <Route path="/dashboard" component={HomeDashboard} />
-          <Route path="/profile" component={ProfileDashboard} />
-          <Route path="/history" component={HistoryDashboard } />
-          <Route path="/social" component={SocialDashboard} />
-          <Route path="/signin" component={SigninPage} />
-          <Route path="/register" component={RegisterPage} />
-          <Route path="/forgotpassword" component={ForgotPasswordPage} />
+          <Route path="/dashboard" render={(props) => <HomeDashboard {...props} t={t} /> } />
+          <Route path="/profile" render={(props) => <ProfileDashboard {...props} t={t} /> } />
+          <Route path="/history" render={(props) => <HistoryDashboard {...props} t={t} /> } />
+          <Route path="/social" render={(props) => <SocialDashboard {...props} t={t} /> } />
+          <Route path="/signin" render={(props) => <SigninPage {...props} t={t} /> } />
+          <Route path="/register" render={(props) => <RegisterPage {...props} t={t} /> } />
+          <Route path="/forgotpassword" render={(props) => <ForgotPasswordPage {...props} t={t} /> } />
         </NavigationMenu>
       </div>
     </HashRouter>
