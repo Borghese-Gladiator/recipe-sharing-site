@@ -162,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
-  const { logo, routeData, langCallback } = props;
+  const { logo, routeData, langCallback, signInText, registerText } = props;
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -203,13 +203,13 @@ export default function PersistentDrawerLeft(props) {
             <ButtonAndIconLink 
               ariaLabel="sign-in"
               to="/signin"
-              primary="Sign In"
+              primary={signInText}
               icon={<ExitToAppIcon />} 
             />
             <ButtonAndIconLink 
               ariaLabel="register"
               to="/register"
-              primary="Register"
+              primary={registerText}
               icon={<AssignmentIcon />} 
             />
             <Divider className={classes.divider} orientation="vertical" flexItem />

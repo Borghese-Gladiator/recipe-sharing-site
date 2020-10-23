@@ -26,27 +26,27 @@ import PeopleIcon from '@material-ui/icons/People';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import logo from './img/TastePerfect Logo.png'
 
-const navMenuRouteData = [
-  { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
-  { text: 'BROWSE', link: "/browse", iconFunc: () => { return <PageviewIcon /> } },
-  { text: 'DASHBOARD', link: "/dashboard", iconFunc: () => { return <DashboardIcon /> } },
-  { text: 'PROFILE', link: "/profile", iconFunc: () => { return <AccountBoxIcon /> } },
-  { text: 'HISTORY', link: "/history", iconFunc: () => { return <HistoryIcon /> } },
-  { text: 'SOCIAL', link: "/social", iconFunc: () => { return <PeopleIcon /> } },
-]
+
 
 function App(props) {
   // custom hook to call i18n changeLanguage function
-  const [lang, setLang] = React.useState('en');
+  const { t } = props;
   const langCallback = (event) => {
     let newLang = event.target.value;
     console.log(newLang)
     console.log("HERE")
-    setLang(newLang)
     props.i18n.changeLanguage(newLang)
   }
+
+  const navMenuRouteData = [
+    { text: t('navMenu.HOME'), link: '/', iconFunc: () => { return <HomeIcon /> } },
+    { text: t('navMenu.BROWSE'), link: "/browse", iconFunc: () => { return <PageviewIcon /> } },
+    { text: t('navMenu.DASHBOARD'), link: "/dashboard", iconFunc: () => { return <DashboardIcon /> } },
+    { text: t('navMenu.PROFILE'), link: "/profile", iconFunc: () => { return <AccountBoxIcon /> } },
+    { text: t('navMenu.HISTORY'), link: "/history", iconFunc: () => { return <HistoryIcon /> } },
+    { text: t('navMenu.SOCIAL'), link: "/social", iconFunc: () => { return <PeopleIcon /> } },
+  ]
   
-  const { t } = props
   return (
     <HashRouter initialEntries={['/drafts']} initialIndex={0}>
       <div style={{backgroundColor: "#DAE3E7"}}>
@@ -54,6 +54,8 @@ function App(props) {
           routeData={navMenuRouteData}
           logo={logo}
           langCallback={langCallback}
+          registerText={t('navMenu.register')}
+          signInText={t('navMenu.signIn')}
         >
           <Route exact path="/" render={(props) => <HomePage {...props} t={t} /> } />
           <Route path="/browse" render={(props) => <BrowsePage {...props} t={t} /> } />
