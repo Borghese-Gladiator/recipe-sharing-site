@@ -10,7 +10,7 @@ import MyBackgroundImg from '../img/opacity-70-food-background.png'
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    padding: theme.spacing(35, 0, 60),
+    padding: theme.spacing(25, 0, 60),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
