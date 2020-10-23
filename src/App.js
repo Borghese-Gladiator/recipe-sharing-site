@@ -1,8 +1,8 @@
 import React from "react";
-import {
-  HashRouter,
-  Route
-} from "react-router-dom";
+// Translation with i18n
+import { withTranslation, Trans } from 'react-i18next'
+// Routing
+import { HashRouter, Route } from "react-router-dom";
 // Custom menu: nav and sidebar
 import NavigationMenu from "./components/NavigationMenu"
 // Pages
@@ -14,10 +14,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HomeDashboard from './components/Dashboard/HomeDashboard'
 import ProfileDashboard from './components/Dashboard/ProfileDashboard'
 import HistoryDashboard from './components/Dashboard/HistoryDashboard'
-import SocialDashboard from './components/Dashboard/SocialDashboard'
-
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import logo from './img/TastePerfect Logo.png'
+import SocialDashboard from './components/Dashboard/SocialDashboard';
 // Sidebar icons
 import HomeIcon from '@material-ui/icons/Home'
 import PageviewIcon from '@material-ui/icons/Pageview';
@@ -25,6 +22,9 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import HistoryIcon from '@material-ui/icons/History';
 import PeopleIcon from '@material-ui/icons/People';
+// super hack
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import logo from './img/TastePerfect Logo.png'
 
 const navMenuRouteData = [
   { text: 'HOME', link: '/', iconFunc: () => { return <HomeIcon /> } },
@@ -35,16 +35,25 @@ const navMenuRouteData = [
   { text: 'SOCIAL', link: "/social", iconFunc: () => { return <PeopleIcon /> } },
 ]
 
-export default function App(props) {
+function App(props) {
+  // custom hook to call i18n changeLanguage function
   const [lang, setLang] = React.useState('en');
-
+  const langCallback = (event) => {
+    let newLang = event.target.value;
+    console.log(newLang)
+    console.log("HERE")
+    setLang(newLang)
+    props.i18n.changeLanguage(newLang)
+  }
+  
+  const { t } = props
   return (
     <HashRouter initialEntries={['/drafts']} initialIndex={0}>
       <div style={{backgroundColor: "#DAE3E7"}}>
         <NavigationMenu
           routeData={navMenuRouteData}
           logo={logo}
-          onSelectLanguage={setLang}
+          langCallback={langCallback}
         >
           <Route exact path="/" component={HomePage} />
           <Route path="/browse" component={BrowsePage} />
@@ -60,3 +69,5 @@ export default function App(props) {
     </HashRouter>
   );
 }
+
+export default withTranslation()(App);

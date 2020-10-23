@@ -44,13 +44,13 @@ const useStyles2 = makeStyles((theme) => ({
 const whiteTranslateIcon = () => { return (<TranslateIcon style={{color:"inherit"}} />) }
 
 function LanguageSelector(props) {
+  const { onSelectLanguage } = props;
   const classes = useStyles2();
-  const [age, setAge] = React.useState('en');
+  const [lang, setLang] = React.useState('en');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
-    console.log(event.target.value)
-    props.onSelectLanguage(event.target.value)
+    setLang(event.target.value);
+    onSelectLanguage(event);
   };
 
   return (
@@ -58,11 +58,12 @@ function LanguageSelector(props) {
       <Select
         id="demo-simple-select"
         IconComponent={whiteTranslateIcon}
-        value={age}
+        value={lang}
         onChange={handleChange}
         style={{color:"inherit", fontSize: '18px' }}
       >
         <MenuItem value={'en'}>English</MenuItem>
+        <MenuItem value={'es'}>Español</MenuItem>
         <MenuItem value={'zh'}>简体中文</MenuItem>
         <MenuItem value={'jp'}>日本語</MenuItem>
       </Select>
@@ -161,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
-  const { logo, routeData } = props;
+  const { logo, routeData, langCallback } = props;
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -212,7 +213,7 @@ export default function PersistentDrawerLeft(props) {
               icon={<AssignmentIcon />} 
             />
             <Divider className={classes.divider} orientation="vertical" flexItem />
-            <LanguageSelector onSelectLanguage={props.onSelectLanguage} />
+            <LanguageSelector onSelectLanguage={langCallback} />
           </div>
         </Toolbar>
       </AppBar>
