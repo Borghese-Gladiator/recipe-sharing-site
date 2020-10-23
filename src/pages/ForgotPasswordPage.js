@@ -46,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function ForgotPasswordPage(props) {
+  const { t } = props;
   const classes = useStyles();
 
   // 100vh, so height of browser page is filled with background

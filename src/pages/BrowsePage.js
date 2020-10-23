@@ -5,10 +5,10 @@ import RecipeCardList from '../components/RecipeCardList'
 import { recipeData } from '../constants/recipeData'
 
 export default function AboutPage(props) {
-  const { lang } = props
+  const { t } = props
   return (
     <Container>
-      <h2>RECIPES</h2>
+      <h2>{t("browse.recipes")}</h2>
       <RecipeCardList recipeData={recipeData} />
     </Container>
   )

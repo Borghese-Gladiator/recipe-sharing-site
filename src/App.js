@@ -11,10 +11,10 @@ import BrowsePage from './pages/BrowsePage';
 import SigninPage from './pages/SigninPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
-import HomeDashboard from './components/Dashboard/HomeDashboard'
-import ProfileDashboard from './components/Dashboard/ProfileDashboard'
-import HistoryDashboard from './components/Dashboard/HistoryDashboard'
-import SocialDashboard from './components/Dashboard/SocialDashboard';
+import HomeDashboard from './pages/Dashboard/HomeDashboard'
+import ProfileDashboard from './pages/Dashboard/ProfileDashboard'
+import HistoryDashboard from './pages/Dashboard/HistoryDashboard'
+import SocialDashboard from './pages/Dashboard/SocialDashboard';
 // Sidebar icons
 import HomeIcon from '@material-ui/icons/Home'
 import PageviewIcon from '@material-ui/icons/Pageview';
@@ -55,8 +55,8 @@ function App(props) {
           logo={logo}
           langCallback={langCallback}
         >
-          <Route exact path="/" component={HomePage} />
-          <Route path="/browse" component={BrowsePage} />
+          <Route exact path="/" render={(props) => <HomePage {...props} t={t} /> } />
+          <Route path="/browse" render={(props) => <BrowsePage {...props} t={t} /> } />
           <Route path="/dashboard" component={HomeDashboard} />
           <Route path="/profile" component={ProfileDashboard} />
           <Route path="/history" component={HistoryDashboard } />
