@@ -20,6 +20,7 @@ import Divider from '@material-ui/core/Divider';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const cardUseStyles = makeStyles((theme) => ({
   root: {
