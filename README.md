@@ -29,7 +29,7 @@ See it live on Netlify here: [Deployed Netlify Site](https://github.com/Borghese
 ## How to Use
 to do - write this with screenshots
 
-## Credits
+## Author
 Borghese-Gladiator
 
 ## Installation
