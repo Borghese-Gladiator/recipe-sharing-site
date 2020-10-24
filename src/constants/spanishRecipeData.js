@@ -1,4 +1,4 @@
-export const recipeData = {
+export const spanishRecipeData = {
 	"recipes": [
 		{
 			"title": "Receta de Tortitas de atún en salsa verde",
