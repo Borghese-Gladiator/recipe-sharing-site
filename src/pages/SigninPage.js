@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonLink } from '../components/CustomLinks';
+import { LabelledLink } from '../components/CustomLinks';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -99,7 +99,7 @@ export default function SignIn() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <ButtonLink
+              <LabelledLink
                 to="/forgotpassword"
                 primary="Forgot password?"
               />
@@ -108,7 +108,7 @@ export default function SignIn() {
               </Link>
             </Grid>
             <Grid item>
-              <ButtonLink
+              <LabelledLink
                 to="/signin"
                 primary="Don't have an account? Sign Up"
               />
