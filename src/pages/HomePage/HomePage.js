@@ -7,6 +7,9 @@ import Typography from '@material-ui/core/Typography';
 // Assets
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import MyBackgroundImg from './opacity-70-food-background.png'
+// Custom component & data
+import FeatureRoles from '../../components/FeatureRoles'
+import { aboutRolesData } from '../../constants/featuresList'
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -35,8 +38,8 @@ export default function HomePage(props) {
   const signInButton = signInArrowShown ? <>Sign In <ArrowRightAltIcon /></> : <>Sign In</>
 
   return (
-    <div id={id} style={{ backgroundImage: `url(${MyBackgroundImg})` }}>
-      <div className={classes.heroContent}>
+    <div id={id}>
+      <div className={classes.heroContent} style={{ backgroundImage: `url(${MyBackgroundImg})` }}>
         <Container maxWidth="sm">
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Share Recipes with Friends 
@@ -91,6 +94,7 @@ export default function HomePage(props) {
           <h3 align="right" style={{ paddingRight: '50px' }}>- Vizzini{'   '}</h3>
         </Container>
       </div>
+      <FeatureRoles aboutRolesData={aboutRolesData} />
     </div>
   );
 }
