@@ -29,9 +29,11 @@ export default function RecipeCardList(props) {
               <Grid key={`${obj.title} ${idx}`} item>
                 <RecipeCard
                   name={obj.name}
-                  ingredients={obj.ingredients}
+                  imgPath={obj.imgPath}
+                  starsNum={obj.stars}
                   tags={obj.tags}
-                  pictures={obj.pictures}
+                  ingredients={obj.ingredients}
+                  desc={obj.desc}
                   user={obj.user}
                   style={{background: "#fff"}}
                 />

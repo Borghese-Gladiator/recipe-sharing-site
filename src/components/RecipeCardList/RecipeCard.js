@@ -3,10 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 // Card
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import Rating from '@material-ui/lab/Rating';
 import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -20,7 +22,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const cardUseStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345
+    width: 345
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9,
+    objectFit: "cover"
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -55,7 +62,7 @@ const cardUseStyles = makeStyles((theme) => ({
 
 export default function RecipeCard(props) {
   const classes = cardUseStyles();
-  const { name, ingredients, tags, pictures, user } = props
+  const { name, imgPath, starsNum, tags, ingredients, desc, user } = props
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -65,7 +72,7 @@ export default function RecipeCard(props) {
   // Generate list items with dividers
   const listItems = tags.map((val, idx) => {
     return (
-      <Typography key={`${val} ${idx}`} color="textSecondary" className={classes.flexRowItem}>
+      <Typography key={`${val} ${idx}`} color="textPrimary" className={classes.flexRowItem}>
         {val}
       </Typography>
     )
@@ -74,20 +81,22 @@ export default function RecipeCard(props) {
   listItems.forEach((item, index) => {
     listItemsWithDividers.push(item)
     if (listItems[index + 1] !== undefined) {
-      listItemsWithDividers.push(<Divider className={classes.divider} orientation="vertical" />)
+      listItemsWithDividers.push(<Divider key={`Divider: ${index}`} className={classes.divider} orientation="vertical" />)
     }
   })
 
   return (
     <Card className={classes.root}>
+      <CardMedia
+        className={classes.media}
+        image={`${process.env.PUBLIC_URL}/${imgPath}`}
+        title={name}
+      />
       <CardContent>
-        {
-          pictures()
-        }
-        <Typography variant="h5">
+        <Typography variant="h6">
           {name}
         </Typography>
-        <br />
+        <Rating name="read-only" value={starsNum} readOnly />
         <Typography variant="caption" display="block" style={{textAlign:"left"}}>
           By <strong><u>{user}</u></strong>
         </Typography>
