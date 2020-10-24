@@ -24,9 +24,7 @@ import HistoryIcon from '@material-ui/icons/History';
 import PeopleIcon from '@material-ui/icons/People';
 // super hack
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import logo from './img/TastePerfect Logo.png'
-
-
+import logo from './img/TastePerfect-Logo.png'
 
 function App(props) {
   // custom hook to call i18n changeLanguage function
