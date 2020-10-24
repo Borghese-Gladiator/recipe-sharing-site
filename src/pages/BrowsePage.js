@@ -8,7 +8,7 @@ export default function AboutPage(props) {
   const { t } = props
   return (
     <Container>
-      <h2>{t("browse.recipes")}</h2>
+      <h2 style={{textAlign: "center"}}>{t("browse.recipes")}</h2>
       <RecipeCardList recipeData={recipeData} />
     </Container>
   )
