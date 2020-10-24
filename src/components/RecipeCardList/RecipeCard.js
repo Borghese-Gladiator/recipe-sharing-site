@@ -135,6 +135,9 @@ export default function RecipeCard(props) {
               )
             })}
           </List>
+          <Typography variant="body">
+            {desc}
+          </Typography>
           <div style={{textAlign:"center"}}>
             <IconButton aria-label="add to favorites">
               <FavoriteIcon />

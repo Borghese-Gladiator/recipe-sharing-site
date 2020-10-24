@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // Prop Type checking
 import PropTypes from 'prop-types';
 // Material UI components
-import { Button, Typography, Link } from '@material-ui/core';
+import { Link } from '@material-ui/core';
 
 export default function ButtonLink(props) {
   const { primary, to } = props;

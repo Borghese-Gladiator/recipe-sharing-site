@@ -1,6 +1,6 @@
 import React from "react";
 // Translation with i18n
-import { withTranslation, Trans } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 // Routing
 import { HashRouter, Route } from "react-router-dom";
 // Custom menu: nav and sidebar
