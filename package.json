@@ -9,17 +9,14 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "framer-motion": "^2.3.0",
     "i18next": "^19.8.2",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
-    "multistreamsmixer": "^1.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropdown": "^1.7.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.7.3",
-    "react-iframe": "^1.8.0",
     "react-lazy-load-image-component": "^1.5.0",
     "react-responsive-carousel": "^3.2.10",
     "react-router-dom": "^5.2.0",
@@ -49,7 +46,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
-  },
-  "homepage": "https://borghese-gladiator.github.io/recipe-sharing-site"
+    "netlify-cli": "^2.65.7"
+  }
 }
