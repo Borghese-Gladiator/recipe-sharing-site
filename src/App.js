@@ -23,8 +23,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import HistoryIcon from '@material-ui/icons/History';
 import PeopleIcon from '@material-ui/icons/People';
 // super hack
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import logo from './img/TastePerfect-Logo.png'
+import logo from './TastePerfect-Logo.png'
 
 function App(props) {
   // custom hook to call i18n changeLanguage function

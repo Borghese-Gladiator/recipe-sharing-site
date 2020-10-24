@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 // Assets
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
-import MyBackgroundImg from '../img/opacity-70-food-background.png'
+import MyBackgroundImg from './opacity-70-food-background.png'
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
