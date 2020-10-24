@@ -103,9 +103,6 @@ export default function SignIn() {
                 to="/forgotpassword"
                 primary="Forgot password?"
               />
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
             </Grid>
             <Grid item>
               <LabelledLink
