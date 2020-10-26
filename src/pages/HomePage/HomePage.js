@@ -9,7 +9,9 @@ import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import MyBackgroundImg from './opacity-70-food-background.png'
 // Custom component & data
 import FeatureRoles from '../../components/FeatureRoles'
-import { aboutRolesData } from '../../constants/featuresList'
+import IconLabelCardList from '../../components/IconLabelCardList'
+import ContactForm from '../../components/ContactForm'
+import { homeIconLabelList, aboutRolesData } from '../../constants/homeConstants'
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -94,7 +96,19 @@ export default function HomePage(props) {
           <h3 align="right" style={{ paddingRight: '50px' }}>- Vizzini{'   '}</h3>
         </Container>
       </div>
-      <FeatureRoles aboutRolesData={aboutRolesData} />
+      <div>
+        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+          Features
+        </Typography>
+        <FeatureRoles aboutRolesData={aboutRolesData} />
+      </div>
+      <div>
+        <Typography component="h3" variant="h3" align="center" color="textPrimary">
+          CONTACT US
+        </Typography>
+        <IconLabelCardList iconLabelList={homeIconLabelList} />
+        <ContactForm />
+      </div>
     </div>
   );
 }

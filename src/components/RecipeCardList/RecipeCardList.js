@@ -22,25 +22,21 @@ export default function RecipeCardList(props) {
 
   return (
     <Container id={id} className={classes.root}>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={1}>
-            {recipeData.map((obj, idx) => (
-              <Grid key={`${obj.title} ${idx}`} item>
-                <RecipeCard
-                  name={obj.name}
-                  imgPath={obj.imgPath}
-                  starsNum={obj.stars}
-                  tags={obj.tags}
-                  ingredients={obj.ingredients}
-                  desc={obj.desc}
-                  user={obj.user}
-                  style={{background: "#fff"}}
-                />
-              </Grid>
-            ))}
+      <Grid container justify="center" spacing={1}>
+        {recipeData.map((obj, idx) => (
+          <Grid key={`${obj.title} ${idx}`} item xs={12} sm={6} md={4} lg={3}>
+            <RecipeCard
+              name={obj.name}
+              imgPath={obj.imgPath}
+              starsNum={obj.stars}
+              tags={obj.tags}
+              ingredients={obj.ingredients}
+              desc={obj.desc}
+              user={obj.user}
+              style={{background: "#fff"}}
+            />
           </Grid>
-        </Grid>
+        ))}
       </Grid>
     </Container>
   );

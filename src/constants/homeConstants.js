@@ -2,6 +2,11 @@ import React from 'react'
 import CodeIcon from '@material-ui/icons/Code';
 import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
 import AllOutIcon from '@material-ui/icons/AllOut';
+
+import PhoneIcon from '@material-ui/icons/Phone';
+import PrintIcon from '@material-ui/icons/Print';
+import MailIcon from '@material-ui/icons/Mail';
+import RoomIcon from '@material-ui/icons/Room';
 /*
   - enables users to browse community recipes
   - enables users to post recipes
@@ -51,3 +56,22 @@ export const aboutRolesData = [
     ]
   }
 ]
+
+export const homeIconLabelList = [
+  {
+    label: "+123 999 999 999",
+    icon: () => { return <PhoneIcon style={{fontSize: 80}} /> },
+  },
+  {
+    label: "+101 999 999 999",
+    icon: () => { return <PrintIcon style={{fontSize: 80}} /> },
+  },
+  {
+    label: "+info@tasteperfect.org",
+    icon: () => { return <MailIcon style={{fontSize: 80}} /> },
+  },
+  {
+    label: "Chuo City, Tokyo, JP",
+    icon: () => { return <RoomIcon style={{fontSize: 80}} /> },
+  },
+];
