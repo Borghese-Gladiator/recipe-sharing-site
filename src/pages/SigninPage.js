@@ -13,6 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
 
 function Copyright() {
   return (
@@ -28,7 +29,12 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
+  wrapper: {
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
+  },
+  formContainer: {
     marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
@@ -53,66 +59,67 @@ export default function SignIn() {
   // 100vh, so height of browser page is filled with background
   return (
     <Container component="main" maxWidth="xs" style={{height: "100vh"}}>
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <LabelledLink
-                to="/forgotpassword"
-                primary="Forgot password?"
-              />
+      <Paper className={classes.wrapper}>
+        <div className={classes.formContainer}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <LabelledLink
+                  to="/forgotpassword"
+                  primary="Forgot password?"
+                />
+              </Grid>
+              <Grid item>
+                <LabelledLink
+                  to="/signin"
+                  primary="Don't have an account? Sign Up"
+                />
+              </Grid>
             </Grid>
-            <Grid item>
-              <LabelledLink
-                to="/signin"
-                primary="Don't have an account? Sign Up"
-              />
-            </Grid>
-          </Grid>
-        </form>
-      </div>
+          </form>
+        </div>
+      </Paper>
       <Box mt={8}>
         <Copyright />
       </Box>
