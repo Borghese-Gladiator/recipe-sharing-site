@@ -15,6 +15,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  iconButton: {
+    borderRadius: '50%',
+    border: '5px solid #555'
+  }
 }));
 
 export default function IconLabelCardList(props) {
@@ -26,7 +30,7 @@ export default function IconLabelCardList(props) {
       <Grid container spacing={1}>
         {iconLabelList.map((obj, idx) => (
           <Grid className={classes.flexColumn} key={`${obj.label} ${idx}`} item xs={12} sm={6} md={4} lg={3}>
-            <IconButton aria-label={`${obj.label} ${idx}`}>
+            <IconButton aria-label={`${obj.label} ${idx}`} className={classes.iconButton}>
               {obj.icon()}
             </IconButton>
             {obj.label}
