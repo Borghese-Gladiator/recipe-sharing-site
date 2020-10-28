@@ -4,7 +4,6 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 // Assets
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import MyBackgroundImg from './opacity-70-food-background.png'
@@ -104,13 +103,11 @@ export default function HomePage(props) {
         <FeatureRoles aboutRolesData={aboutRolesData} />
       </div>
       <Container>
-        <Paper>
-          <Typography component="h3" variant="h3" align="center" color="textPrimary">
-            CONTACT US
-          </Typography>
-          <IconLabelCardList iconLabelList={homeIconLabelList} />
-          <ContactForm />
-        </Paper>
+        <Typography component="h3" variant="h3" align="center" color="textPrimary">
+          CONTACT US
+        </Typography>
+        <IconLabelCardList iconLabelList={homeIconLabelList} />
+        <ContactForm />
       </Container>
     </div>
   );
