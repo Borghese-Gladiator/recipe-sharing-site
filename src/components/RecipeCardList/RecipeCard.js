@@ -84,6 +84,7 @@ export default function RecipeCard(props) {
       listItemsWithDividers.push(<Divider key={`Divider: ${index}`} className={classes.divider} orientation="vertical" />)
     }
   })
+  // CardContent gives too much padding
 
   return (
     <Card className={classes.root}>
@@ -92,7 +93,7 @@ export default function RecipeCard(props) {
         image={`${process.env.PUBLIC_URL}/${imgPath}`}
         title={name}
       />
-      <CardContent>
+      <div style={{paddingLeft: '14px'}}>
         <Typography variant="h6">
           {name}
         </Typography>
@@ -100,8 +101,14 @@ export default function RecipeCard(props) {
         <Typography variant="caption" display="block" style={{textAlign:"left"}}>
           By <strong><u>{user}</u></strong>
         </Typography>
-      </CardContent>
+      </div>
       <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

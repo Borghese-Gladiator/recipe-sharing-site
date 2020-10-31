@@ -8,8 +8,7 @@ import RecipeCard from './RecipeCard'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-    padding: "5vh",
+    flexGrow: 1
   },
   control: {
     padding: theme.spacing(2),
@@ -24,7 +23,7 @@ export default function RecipeCardList(props) {
     <Container id={id} className={classes.root}>
       <Grid container justify="center" spacing={1}>
         {recipeData.map((obj, idx) => (
-          <Grid key={`${obj.title} ${idx}`} item xs={12} sm={6} md={4} lg={3}>
+          <Grid key={`${obj.title} ${idx}`} item>
             <RecipeCard
               name={obj.name}
               imgPath={obj.imgPath}

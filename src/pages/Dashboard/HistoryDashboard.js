@@ -1,28 +1,20 @@
 import React from 'react'
 import Container from '@material-ui/core/Container';
 import HorizontalGridList from '../../components/HorizontalGridList'
-import { messagesData } from '../../constants/historyDashboard'
+import { messagesData, recentViewedData } from '../../constants/historyDashboard'
 
 export default function HistoryDashboard() {
   return (
-    <div>
-      <h2>HISTORY</h2>
+    <Container>
+      <h1 style={{textAlign: "center"}}>History</h1>
       <Container>
-        <h4>Recently Viewed</h4>
-        <HorizontalGridList size={10} tileData={messagesData} />
+        <h2>Recently Viewed</h2>
+        <HorizontalGridList size={10} tileData={recentViewedData} />
       </Container>
       <Container>
-        <h4>Liked Recipes</h4>
+        <h2>Liked Recipes</h2>
         <HorizontalGridList size={10} tileData={messagesData} />
       </Container>
-      <div>
-        <h4>My Posts</h4>
-        <HorizontalGridList size={10} tileData={messagesData} />
-      </div>
-      <div>
-        <h4>Messages</h4>
-        <HorizontalGridList size={10} tileData={messagesData} />
-      </div>
-    </div>
+    </Container>
   )
 }
