@@ -104,10 +104,16 @@ export default function HomePage(props) {
       </div>
       <Container>
         <Typography component="h3" variant="h3" align="center" color="textPrimary">
-          CONTACT US
+          {t("home.contactTitle")}
         </Typography>
         <IconLabelCardList iconLabelList={homeIconLabelList} />
-        <ContactForm />
+        <ContactForm
+          messageTitle={t("home.messageTitle")}
+          nameText={t("home.messageName")}
+          emailText={t("home.messageEmail")}
+          messageText={t("home.messageText")}
+          messageButtonText={t("home.messageButtonText")}
+        />
       </Container>
     </div>
   );

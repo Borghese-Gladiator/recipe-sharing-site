@@ -16,7 +16,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        TastePerfect
+        HoloMemes
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -50,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ForgotPasswordPage(props) {
-  const { t } = props;
   const classes = useStyles();
+  const { t } = props;
 
   // 100vh, so height of browser page is filled with background
   return (
@@ -63,7 +63,7 @@ export default function ForgotPasswordPage(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Recover Password
+          {t("forgotPassword.title")}
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -72,7 +72,7 @@ export default function ForgotPasswordPage(props) {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label={t("forgotPassword.email")}
             name="email"
             autoComplete="email"
             autoFocus
@@ -84,7 +84,7 @@ export default function ForgotPasswordPage(props) {
             color="primary"
             className={classes.submit}
           >
-            Submit
+            {t("forgotPassword.submit")}
           </Button>
         </form>
       </div>
