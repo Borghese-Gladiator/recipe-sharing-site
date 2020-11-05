@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HomePage(props) {
-  const { id } = props
+  const { t, id } = props
   const classes = useStyles();
   const mobile = false
 
