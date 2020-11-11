@@ -1,5 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+// CustomLink for React Router import
+import { CustomLink } from '../CustomLinks';
 // Card
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -63,7 +65,7 @@ const cardUseStyles = makeStyles((theme) => ({
 
 export default function RecipeCard(props) {
   const classes = cardUseStyles();
-  const { name, imgPath, starsNum, tags, ingredients, desc, user } = props
+  const { postID, name, imgPath, starsNum, tags, ingredients, desc, user } = props
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -89,23 +91,25 @@ export default function RecipeCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea onClick={(e) => { console.log("BLAH") }}>
-        <CardMedia
-          className={classes.media}
-          image={`${process.env.PUBLIC_URL}/${imgPath}`}
-          title={name}
-        />
-        <div style={{paddingLeft: '14px'}}>
-          <Typography variant="h5" display="block" style={{textAlign:"left"}}>
-            By <strong><u>{user}</u></strong>
-          </Typography>
-          <Typography variant="caption">
-            {name}
-          </Typography>
-          <br />
-          <Rating name="read-only" value={starsNum} readOnly />
-        </div>
-      </CardActionArea>
+      <CustomLink ariaLabel={`Link to ID: ${postID}`} to={`/${postID}`}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={`${process.env.PUBLIC_URL}/${imgPath}`}
+            title={name}
+          />
+          <div style={{paddingLeft: '14px'}}>
+            <Typography variant="h5" display="block" style={{textAlign:"left"}}>
+              By <strong><u>{user}</u></strong>
+            </Typography>
+            <Typography variant="caption">
+              {name}
+            </Typography>
+            <br />
+            <Rating name="read-only" value={starsNum} readOnly />
+          </div>
+        </CardActionArea>
+      </CustomLink>
       <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />

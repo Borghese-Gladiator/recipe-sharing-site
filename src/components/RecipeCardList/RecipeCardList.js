@@ -25,6 +25,7 @@ export default function RecipeCardList(props) {
         {recipeData.map((obj, idx) => (
           <Grid key={`${obj.title} ${idx}`} item>
             <RecipeCard
+              postID={obj.postID}
               name={obj.name}
               imgPath={obj.imgPath}
               starsNum={obj.stars}

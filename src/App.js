@@ -8,7 +8,7 @@ import NavigationMenu from "./components/NavigationMenu"
 import Footer from './components/Footer'
 // Pages
 import HomePage from './pages/HomePage';
-import BrowsePage from './pages/BrowsePage';
+import BrowsePage from './pages/Browse/BrowsePage';
 import SigninPage from './pages/SigninPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
