@@ -37,7 +37,7 @@ export default function CenteredGrid() {
                 </Typography>
               </Grid>
               <Grid item xs={8}>
-                <Typography variant="body1" className={classes.Typography}><UploadButton /></Typography>
+                <UploadButton />
               </Grid>
             </Grid>
             <Divider />
@@ -97,7 +97,7 @@ export default function CenteredGrid() {
                 </Typography>
               </Grid>
               <Grid item xs={8}>
-                <Typography variant="body1" className={classes.Typography}><div style={{borderStyle: "dotted", borderColor: "coral"}}>Enter here</div></Typography>
+                <div style={{borderStyle: "dotted", borderColor: "coral"}}>Enter here</div>
               </Grid>
             </Grid>
           </Box>
