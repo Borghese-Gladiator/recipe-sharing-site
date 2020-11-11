@@ -43,11 +43,17 @@
             "forgotPass": "Se te olvidó tu contraseña?",
             "noAccountText": "¿No tiene una cuenta? Registra aquí"
         },
-        "animemes": {
-            "title": "ANIMEMES"
+        "homeDashboard": {
+            "title": "Sign In"
         },
-        "hololive": {
-            "title": "HOLOLIVE MEMES"
+        "historyDashboard": {
+            "title": "Sign In"
+        },
+        "profileDashboard": {
+            "title": "Sign In"
+        },
+        "socialDashboard": {
+            "title": "Sign In"
         }
     }
 }

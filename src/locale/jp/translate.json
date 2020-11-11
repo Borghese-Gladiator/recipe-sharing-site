@@ -43,11 +43,17 @@
             "forgotPass": "パスワードを忘れた?",
             "noAccountText": "はじめての方は登録手続きへお進みください。"
         },
-        "animemes": {
-            "title": "アニメのミム"
+        "homeDashboard": {
+            "title": "Sign In"
         },
-        "hololive": {
-            "title": "ホロライブのミム"
+        "historyDashboard": {
+            "title": "Sign In"
+        },
+        "profileDashboard": {
+            "title": "Sign In"
+        },
+        "socialDashboard": {
+            "title": "Sign In"
         }
     }
 }
