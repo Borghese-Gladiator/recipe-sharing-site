@@ -3,8 +3,9 @@ import React from "react";
 import { withTranslation } from 'react-i18next'
 // Routing
 import { HashRouter, Route } from "react-router-dom";
-// Custom menu: nav and sidebar
+// Custom components (menu: nav and sidebar)
 import NavigationMenu from "./components/NavigationMenu"
+import Footer from './components/Footer'
 // Pages
 import HomePage from './pages/HomePage';
 import BrowsePage from './pages/BrowsePage';
@@ -62,7 +63,8 @@ function App(props) {
           <Route path="/social" render={(props) => <SocialDashboard {...props} t={t} /> } />
           <Route path="/signin" render={(props) => <SigninPage {...props} t={t} /> } />
           <Route path="/register" render={(props) => <RegisterPage {...props} t={t} /> } />
-          <Route path="/forgotpassword" render={(props) => <ForgotPasswordPage {...props} t={t} /> } />
+          <Route path="/forgotpassword" render={(props) => <ForgotPasswordPage {...props} t={t} /> } /> 
+          <Footer />
         </NavigationMenu>
       </div>
     </HashRouter>
