@@ -33,7 +33,7 @@ export default function ContactForm(props) {
   const { messageTitle, nameText, emailText, messageText, messageButtonText } = props;
 
   return (
-    <Container>
+    <Container maxWidth="xs">
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
