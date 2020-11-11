@@ -43,6 +43,9 @@
             "forgotPass": "パスワードを忘れた?",
             "noAccountText": "はじめての方は登録手続きへお進みください。"
         },
+        "browse": {
+          "recipes": "Recipes"  
+        },
         "homeDashboard": {
             "title": "Sign In"
         },

@@ -43,6 +43,9 @@
             "forgotPass": "Se te olvidó tu contraseña?",
             "noAccountText": "¿No tiene una cuenta? Registra aquí"
         },
+        "browse": {
+          "recipes": "Recipes"  
+        },
         "homeDashboard": {
             "title": "Sign In"
         },

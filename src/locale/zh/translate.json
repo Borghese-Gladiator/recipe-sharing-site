@@ -43,6 +43,9 @@
             "forgotPass": "忘了密码?",
             "noAccountText": "没有帐号？ 请注册?"
         },
+        "browse": {
+          "recipes": "Recipes"  
+        },
         "homeDashboard": {
             "title": "Sign In"
         },
