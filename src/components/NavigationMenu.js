@@ -184,7 +184,12 @@ export default function PersistentDrawerLeft(props) {
           >
             <MenuIcon />
           </IconButton>
-          <img src={logo} className={classes.logo} alt="logo" />
+          <ButtonAndIconLink 
+            ariaLabel="back to home image"
+            to="/"
+            primary={""}
+            icon={<img src={logo} className={classes.logo} alt="logo" />} 
+          />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <ButtonAndIconLink 
