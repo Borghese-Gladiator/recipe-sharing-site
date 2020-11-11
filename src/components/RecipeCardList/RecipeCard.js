@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
@@ -88,38 +89,41 @@ export default function RecipeCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardMedia
-        className={classes.media}
-        image={`${process.env.PUBLIC_URL}/${imgPath}`}
-        title={name}
-      />
-      <div style={{paddingLeft: '14px'}}>
-        <Typography variant="h6">
-          {name}
-        </Typography>
-        <Rating name="read-only" value={starsNum} readOnly />
-        <Typography variant="caption" display="block" style={{textAlign:"left"}}>
-          By <strong><u>{user}</u></strong>
-        </Typography>
-      </div>
+      <CardActionArea onClick={(e) => { console.log("BLAH") }}>
+        <CardMedia
+          className={classes.media}
+          image={`${process.env.PUBLIC_URL}/${imgPath}`}
+          title={name}
+        />
+        <div style={{paddingLeft: '14px'}}>
+          <Typography variant="h5" display="block" style={{textAlign:"left"}}>
+            By <strong><u>{user}</u></strong>
+          </Typography>
+          <Typography variant="caption">
+            {name}
+          </Typography>
+          <br />
+          <Rating name="read-only" value={starsNum} readOnly />
+        </div>
+      </CardActionArea>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <div className={classes.flexRow}>
