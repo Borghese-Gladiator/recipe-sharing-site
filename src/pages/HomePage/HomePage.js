@@ -42,7 +42,7 @@ export default function HomePage(props) {
   return (
     <div id={id}>
       <div className={classes.heroContent} style={{ backgroundImage: `url(${MyBackgroundImg})` }}>
-        <Container maxWidth="sm">
+        <Container component="main" maxWidth="sm">
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Share Recipes with Friends 
           </Typography>
