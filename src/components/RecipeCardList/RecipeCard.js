@@ -91,24 +91,22 @@ export default function RecipeCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CustomLink ariaLabel={`Link to ID: ${postID}`} to={`/${postID}`}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image={`${process.env.PUBLIC_URL}/${imgPath}`}
-            title={name}
-          />
-          <div style={{paddingLeft: '14px'}}>
-            <Typography variant="h5" display="block" style={{textAlign:"left"}}>
-              By <strong><u>{user}</u></strong>
-            </Typography>
-            <Typography variant="caption">
-              {name}
-            </Typography>
-            <br />
-            <Rating name="read-only" value={starsNum} readOnly />
-          </div>
-        </CardActionArea>
+      <CustomLink ariaLabel={`Link to ID: ${postID}`} to={`/browse/${postID}`}>
+        <CardMedia
+          className={classes.media}
+          image={`${process.env.PUBLIC_URL}/${imgPath}`}
+          title={name}
+        />
+        <div style={{paddingLeft: '14px'}}>
+          <Typography variant="h5" display="block" style={{textAlign:"left"}}>
+            By <strong>{user}</strong>
+          </Typography>
+          <Typography variant="caption">
+            {name}
+          </Typography>
+          <br />
+          <Rating name="read-only" value={starsNum} readOnly />
+        </div>
       </CustomLink>
       <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
