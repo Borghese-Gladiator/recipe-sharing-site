@@ -36,7 +36,7 @@ export default function HorizontalGridList(props) {
   return (
     <GridList className={classes.gridList} cols={2.5}>
       {tileData.slice(0, size).map((tile) => (
-        <GridListTile key={tile.img}>
+        <GridListTile key={tile.title}>
           <img src={`${process.env.PUBLIC_URL}/${tile.imgPath}`} alt={tile.title} />
           <GridListTileBar
             title={tile.title}
