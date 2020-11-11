@@ -19,10 +19,6 @@ export default function BrowsePage(props) {
   const { t } = props
   return (
     <div>
-      <Container>
-        <h2 style={{textAlign: "center"}}>{t("browse.recipes")}</h2>
-        <RecipeCardList recipeData={recipeData} />
-      </Container>
 
       {/* The Topics page has its own <Switch> with more routes
           that build on the /topics URL path. You can think of the
@@ -33,7 +29,10 @@ export default function BrowsePage(props) {
           <RecipePostPage />
         </Route>
         <Route path={match.path}>
-          <h3>Please select a topic.</h3>
+          <Container>
+            <h2 style={{textAlign: "center"}}>{t("browse.recipes")}</h2>
+            <RecipeCardList recipeData={recipeData} />
+          </Container>
         </Route>
       </Switch>
     </div>
