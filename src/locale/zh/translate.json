@@ -4,9 +4,11 @@
             "register": "注册",
             "signIn": "登入",
             "home": "首页",
-            "hololive": "HOLOLIVE MEMES",
-            "animeme": "ANIMEMES",
-            "history": "最近浏览过的"
+            "browse": "BROWSE",
+            "dashboard": "DASHBOARD",
+            "profile": "PROFILE",
+            "history": "最近浏览过的",
+            "social": "SOCIAL"
         },
         "home": {
             "landing": "HoloMeme",

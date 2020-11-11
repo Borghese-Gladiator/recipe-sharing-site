@@ -4,9 +4,11 @@
             "register": "新規会員登録",
             "signIn": "ログイン",
             "home": "HOME",
-            "hololive": "ホロライブのミム",
-            "animeme": "アニメのミム",
-            "history": "HISTORY"
+            "browse": "BROWSE",
+            "dashboard": "DASHBOARD",
+            "profile": "PROFILE",
+            "history": "HISTORY",
+            "social": "SOCIAL"
         },
         "home": {
             "landing": "HoloMeme (ホロミム)",

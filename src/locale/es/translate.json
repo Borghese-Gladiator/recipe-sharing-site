@@ -4,9 +4,11 @@
             "register": "INSCRIBIR",
             "signIn": "REGISTRARSE",
             "home": "INICIO",
-            "hololive": "HOLOLIVE MEMES",
-            "animeme": "ANIMEMES",
-            "history": "HISTORIA"
+            "browse": "BROWSE",
+            "dashboard": "DASHBOARD",
+            "profile": "PROFILE",
+            "history": "HISTORY",
+            "social": "SOCIAL"
         },
         "home": {
             "landing": "HoloMeme",

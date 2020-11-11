@@ -37,12 +37,12 @@ function App(props) {
   }
 
   const navMenuRouteData = [
-    { text: t('navMenu.HOME'), link: '/', iconFunc: () => { return <HomeIcon /> } },
-    { text: t('navMenu.BROWSE'), link: "/browse", iconFunc: () => { return <PageviewIcon /> } },
-    { text: t('navMenu.DASHBOARD'), link: "/dashboard", iconFunc: () => { return <DashboardIcon /> } },
-    { text: t('navMenu.PROFILE'), link: "/profile", iconFunc: () => { return <AccountBoxIcon /> } },
-    { text: t('navMenu.HISTORY'), link: "/history", iconFunc: () => { return <HistoryIcon /> } },
-    { text: t('navMenu.SOCIAL'), link: "/social", iconFunc: () => { return <PeopleIcon /> } },
+    { text: t('navMenu.home'), link: '/', iconFunc: () => { return <HomeIcon /> } },
+    { text: t('navMenu.browse'), link: "/browse", iconFunc: () => { return <PageviewIcon /> } },
+    { text: t('navMenu.dashboard'), link: "/dashboard", iconFunc: () => { return <DashboardIcon /> } },
+    { text: t('navMenu.profile'), link: "/profile", iconFunc: () => { return <AccountBoxIcon /> } },
+    { text: t('navMenu.history'), link: "/history", iconFunc: () => { return <HistoryIcon /> } },
+    { text: t('navMenu.social'), link: "/social", iconFunc: () => { return <PeopleIcon /> } },
   ]
   
   return (
