@@ -30,7 +30,7 @@ export default function BrowsePage(props) {
         </Route>
         <Route path={match.path}>
           <Container>
-            <h2 style={{textAlign: "center"}}>{t("browse.recipes")}</h2>
+            <h1 style={{textAlign: "center"}}>{t("browse.recipes")}</h1>
             <RecipeCardList recipeData={recipeData} />
           </Container>
         </Route>
