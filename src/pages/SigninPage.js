@@ -114,7 +114,7 @@ export default function SignInPage(props) {
               </Grid>
               <Grid item>
                 <LabelledLink
-                  to="/signin"
+                  to="/register"
                   primary={t("signin.noAccountText")}
                 />
               </Grid>
