@@ -3,27 +3,27 @@ import { makeStyles } from '@material-ui/core/styles';
 // CustomLink for React Router import
 import { CustomLink } from '../CustomLinks';
 // Card
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
-import Collapse from '@material-ui/core/Collapse';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
 import Divider from '@material-ui/core/Divider';
-// AboutRoles Icons
+// Card speed dial component
+import SpeedDial from '@material-ui/lab/SpeedDial';
+import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
+import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
+// speed dial Icons
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
-const cardUseStyles = makeStyles((theme) => ({
+const actions = [
+  { icon: <OpenInNewIcon />, name: 'Open' },
+  { icon: <ShareIcon />, name: 'Share' },
+  { icon: <FavoriteIcon />, name: 'Like' },
+];
+
+const useStyles = makeStyles((theme) => ({
   root: {
     width: 345
   },
@@ -61,12 +61,39 @@ const cardUseStyles = makeStyles((theme) => ({
     height: 28,
     margin: 4,
   },
+  exampleWrapper: {
+    position: 'relative',
+    marginTop: theme.spacing(3),
+  },
+  speedDial: {
+    position: 'absolute',
+    '&.MuiSpeedDial-directionUp, &.MuiSpeedDial-directionLeft': {
+      bottom: theme.spacing(2),
+      right: theme.spacing(2),
+    },
+    '&.MuiSpeedDial-directionDown, &.MuiSpeedDial-directionRight': {
+      top: theme.spacing(2),
+      left: theme.spacing(2),
+    },
+    '&.MuiSpeedDial-fab': {
+      size: "small"
+    }
+  },
 }));
 
 export default function RecipeCard(props) {
-  const classes = cardUseStyles();
+  const classes = useStyles();
   const { postID, name, imgPath, starsNum, tags, ingredients, desc, user } = props
   const [expanded, setExpanded] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -108,59 +135,27 @@ export default function RecipeCard(props) {
           <Rating name="read-only" value={starsNum} readOnly />
         </div>
       </CustomLink>
-      <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <div className={classes.flexRow}>
-            {listItemsWithDividers}
-          </div>
-          <br />
-          <Typography variant="h6">
-            Ingredients
-          </Typography>
-          <List dense={true}>
-            {ingredients.map((value, idx) => {
-              return (
-                <ListItem key={`${value} ${idx}`}>
-                  <Checkbox inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
-                  <ListItemText
-                    disableTypography
-                    primary={<Typography variant="subtitle1">{value}</Typography>}
-                  />
-                </ListItem>
-              )
-            })}
-          </List>
-          <Typography variant="body">
-            {desc}
-          </Typography>
-          <div style={{textAlign:"center"}}>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
-          </div>
-        </CardContent>
-      </Collapse>
+      
+      <div className={classes.exampleWrapper}>
+        <SpeedDial
+          ariaLabel="SpeedDial example"
+          className={classes.speedDial}
+          icon={<SpeedDialIcon />}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          open={open}
+          direction="up"
+        >
+          {actions.map((action) => (
+            <SpeedDialAction
+              key={action.name}
+              icon={action.icon}
+              tooltipTitle={action.name}
+              onClick={handleClose}
+            />
+          ))}
+        </SpeedDial>
+      </div>
     </Card>
   );
 }
