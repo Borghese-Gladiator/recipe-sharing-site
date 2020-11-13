@@ -12,19 +12,20 @@ import BrowsePage from './pages/Browse/BrowsePage';
 import SigninPage from './pages/SigninPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
-import HomeDashboard from './pages/Dashboard/HomeDashboard'
 import ProfileDashboard from './pages/Dashboard/ProfileDashboard'
 import HistoryDashboard from './pages/Dashboard/HistoryDashboard'
 import SocialDashboard from './pages/Dashboard/SocialDashboard';
 // Sidebar icons
 import HomeIcon from '@material-ui/icons/Home'
 import PageviewIcon from '@material-ui/icons/Pageview';
-import DashboardIcon from '@material-ui/icons/Dashboard';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import HistoryIcon from '@material-ui/icons/History';
 import PeopleIcon from '@material-ui/icons/People';
 // super hack
 import logo from './TastePerfect-Logo.png'
+
+// import HomeDashboard from './pages/Dashboard/HomeDashboard'
+// import DashboardIcon from '@material-ui/icons/Dashboard';
 
 function App(props) {
   // custom hook to call i18n changeLanguage function

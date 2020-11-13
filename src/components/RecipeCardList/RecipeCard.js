@@ -83,8 +83,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeCard(props) {
   const classes = useStyles();
-  const { postID, name, imgPath, starsNum, tags, ingredients, desc, user } = props
-  const [expanded, setExpanded] = React.useState(false);
+  const { postID, name, imgPath, starsNum, tags, user } = props
   const [open, setOpen] = React.useState(false);
   
   const handleClose = () => {
@@ -93,10 +92,6 @@ export default function RecipeCard(props) {
 
   const handleOpen = () => {
     setOpen(true);
-  };
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
   };
 
   // Generate list items with dividers
