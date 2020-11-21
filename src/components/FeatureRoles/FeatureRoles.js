@@ -9,9 +9,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 
 const cardUseStyles = makeStyles((theme) => ({
   root: {
@@ -38,7 +35,7 @@ const cardUseStyles = makeStyles((theme) => ({
 
 function RecipeReviewCard(props) {
   const classes = cardUseStyles();
-  const { title, icon, titleText, desc, useDesc, toolNamesList } = props
+  const { icon, titleText, desc} = props
 
   return (
     <Card className={classes.root}>
@@ -54,29 +51,7 @@ function RecipeReviewCard(props) {
           {desc}
         </Typography>
         <br />
-        <Typography variant="h6" className={classes.headerColor}>
-          Things I enjoy building
-        </Typography>
-        <Typography variant="body">
-          {useDesc}
-        </Typography>
-        <br />
-        <br />
-        <Typography variant="h6" className={classes.headerColor}>
-          {title} Tools
-        </Typography>
-        <List dense={true} style={{paddingTop:0}}>
-          {toolNamesList.map((value, idx) => {
-            return (
-              <ListItem key={`${value} ${idx}`} className={classes.listItemCenter}>
-                <ListItemText
-                  disableTypography
-                  primary={<Typography variant="subtitle1">{value}</Typography>}
-                />
-              </ListItem>
-            )
-          })}
-        </List>
+      
       </CardContent>
     </Card>
   );

@@ -1,12 +1,13 @@
 import React from 'react'
-import CodeIcon from '@material-ui/icons/Code';
-import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
-import AllOutIcon from '@material-ui/icons/AllOut';
 
 import PhoneIcon from '@material-ui/icons/Phone';
 import PrintIcon from '@material-ui/icons/Print';
 import MailIcon from '@material-ui/icons/Mail';
 import RoomIcon from '@material-ui/icons/Room';
+import HistoryIcon from '@material-ui/icons/History';
+import LanguageIcon from '@material-ui/icons/Language';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ForumIcon from '@material-ui/icons/Forum';
 /*
   - enables users to browse community recipes
   - enables users to post recipes
@@ -16,29 +17,29 @@ import RoomIcon from '@material-ui/icons/Room';
 export const aboutRolesData = [
   {
     title: "Browsing",
-    icon: () => { return <CodeIcon style={{fontSize: 80}} />},
-    titleText: "DevOps Engineer",
-    desc: "I love how DevOps automates QA and Release Engineering, but still pushes quality code.",
+    icon: () => { return <LanguageIcon style={{fontSize: 80}} />},
+    titleText: "Multilingual Support",
+    desc: "Multilingual support allows for people form various countries and cultures to interact.",
     useDesc: "CI/CD Infrastructure",
     toolNamesList: [
       "Jenkins", "GitLab", "Docker", "Kubernetes", "Vagrant"
     ]
   },
   {
-    title: "Posting",
-    icon: () => { return <DeveloperModeIcon style={{fontSize: 80}} /> },
-    titleText: "FrontEnd Dev",
-    desc: "I value how frontend showcases my work with clean state management and fast load times",
-    useDesc: "Web & Mobile Apps",
+    title: "",
+    icon: () => { return <AccountCircleIcon style={{fontSize: 80}} /> },
+    titleText: "Custom User Profiles",
+    desc: "User profiles allow you to follow others and gain a following.",
+    useDesc: "",
     toolNamesList: [
       "React", "Vue.js", "CSS3 & Flexbox", "Next & Nuxt", "Flutter"
     ]
   },
   {
     title: "Dashboard View",
-    icon: () => { return <AllOutIcon style={{fontSize: 80}} /> },
-    titleText: "Agile Goal Setter",
-    desc: "I prioritize using Agile in projects for efficiency, accountability, and to progress towards SMART goals (especially in groups).",
+    icon: () => { return <HistoryIcon style={{fontSize: 80}} /> },
+    titleText: "History Page",
+    desc: "History Page allows for users to track posts they have liked or viewed.",
     useDesc: "Agile in Practice",
     toolNamesList: [
       "Jira", "Scrum for Trello", "Kanban", "Slack Bots", "Sprint Review"
@@ -47,9 +48,9 @@ export const aboutRolesData = [
   
   {
     title: "Language",
-    icon: () => { return <AllOutIcon style={{fontSize: 80}} /> },
-    titleText: "Agile Goal Setter",
-    desc: "I prioritize using Agile in projects for efficiency, accountability, and to progress towards SMART goals (especially in groups).",
+    icon: () => { return <ForumIcon style={{fontSize: 80}} /> },
+    titleText: "Community Posts",
+    desc: "Community posts allow for users to interact with others in the community and share recipe ideas.",
     useDesc: "Agile in Practice",
     toolNamesList: [
       "Jira", "Scrum for Trello", "Kanban", "Slack Bots", "Sprint Review"
