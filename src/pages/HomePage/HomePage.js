@@ -11,7 +11,10 @@ import MyBackgroundImg from './opacity-70-food-background.png'
 import FeatureRoles from '../../components/FeatureRoles'
 import IconLabelCardList from '../../components/IconLabelCardList'
 import ContactForm from '../../components/ContactForm'
-import { homeIconLabelList, aboutRolesData } from '../../constants/homeConstants'
+import { homeIconLabelList, aboutRolesData } from '../../constants/homeConstants';
+
+
+import { CustomLink } from '../../components/CustomLinks';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -49,35 +52,37 @@ export default function HomePage(props) {
           <div className={classes.heroButtons}>
             <Grid container spacing={2} justify="center">
               <Grid item>
-                <Button
-                  component="a"
-                  className={classes.primaryButton}
-                  variant="contained"
-                  color="primary"
-                  href="https://github.com/Borghese-Gladiator"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <CustomLink ariaLabel={`Link to Register Page`} to={`/register`}>
+                  <Button
+                    className={classes.primaryButton}
+                    variant="contained"
+                    color="primary"
+                    href="https://github.com/Borghese-Gladiator"
+                    target="_blank"
+                    rel="noopener noreferrer"
 
-                  onMouseEnter={() => setRegisterArrowShown(true)}
-                  onMouseLeave={() => setRegisterArrowShown(false)}
-                >
-                  {registerButton}
-                </Button>
+                    onMouseEnter={() => setRegisterArrowShown(true)}
+                    onMouseLeave={() => setRegisterArrowShown(false)}
+                  >
+                    {registerButton}
+                  </Button>
+                </CustomLink>
               </Grid>
               <Grid item>
-                <Button
-                  component="a"
-                  className={classes.primaryButton}
-                  variant="outlined"
-                  color="primary"
-                  href="https://github.com/Borghese-Gladiator"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onMouseEnter={() => setSignInArrowShown(true)}
-                  onMouseLeave={() => setSignInArrowShown(false)}
-                >
-                  {signInButton}
-                </Button>
+                <CustomLink ariaLabel={`Link to Register Page`} to={`/register`}>
+                  <Button
+                    className={classes.primaryButton}
+                    variant="outlined"
+                    color="primary"
+                    href="https://github.com/Borghese-Gladiator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setSignInArrowShown(true)}
+                    onMouseLeave={() => setSignInArrowShown(false)}
+                  >
+                    {signInButton}
+                  </Button>
+                </CustomLink>
               </Grid>
             </Grid>
           </div>
